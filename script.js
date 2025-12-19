@@ -7,8 +7,22 @@ if (namaTamu) {
 }
 
 /* MUSIC */
-const music = document.getElementById("bgMusic");
-music.play();
+
+const audio = document.getElementById("bgMusic");
+    let isPlaying = false;
+
+    document.body.addEventListener("click", () => {
+      if (!isPlaying) {
+        audio.play();
+        isPlaying = true;
+      } else {
+        audio.pause();
+        isPlaying = false;
+      }
+    });
+//const music = document.getElementById("bgMusic");
+
+//music.play();
 // // let isPlay = true;
 // // function toggleMusic() {
 // //   isPlay ? music.pause() : music.play();
